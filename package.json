@@ -1,0 +1,37 @@
+{
+  "name": "todo-app-main",
+  "version": "1.0.0",
+  "description": "todo app with react",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=development",
+    "dev": "webpack serve --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sun-empire-solutions/todo-app.git"
+  },
+  "keywords": [
+    "todo-app",
+    "react"
+  ],
+  "author": "amendezm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sun-empire-solutions/todo-app/issues"
+  },
+  "homepage": "https://github.com/sun-empire-solutions/todo-app#readme",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  }
+}
