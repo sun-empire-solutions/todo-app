@@ -3,7 +3,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
+    main: "./src/index.tsx",
     styles: "./src/styles/index.scss",
   },
   output: {
@@ -12,7 +12,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"],
+    extensions: ["", ".js", ".jsx", ".ts", ".tsx"],
   },
   optimization: {
     runtimeChunk: {
@@ -31,7 +31,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/i,
+        test: /\.(jsx?|tsx?)$/i,
         loader: "babel-loader",
       },
       {
