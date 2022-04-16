@@ -8,7 +8,19 @@ import sun from "./../assets/images/icon-sun.svg"
 const ThemeSwitcher = () => {
     const { theme, toggleTheme } = useContext(ThemeContext)
 
-    return <button className="theme-switcher" onClick={toggleTheme}><img src={theme === "dark" ? sun : moon} /></button>
+    const trans = () => {
+        document.documentElement.classList.add('transition');
+        window.setTimeout(() => {
+            document.documentElement.classList.remove('transition')
+        }, 2000)
+    }
+
+    const handleThemeToggle = () => {
+        toggleTheme()
+        trans()
+    }
+
+    return <button className="theme-switcher" onClick={handleThemeToggle}><img src={theme === "dark" ? sun : moon} /></button>
 }
 
 export { ThemeSwitcher }

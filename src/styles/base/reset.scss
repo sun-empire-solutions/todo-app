@@ -3,3 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
