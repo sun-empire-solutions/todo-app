@@ -14,6 +14,20 @@ module.exports = {
   resolve: {
     extensions: ["", ".js", ".jsx"],
   },
+  optimization: {
+    runtimeChunk: {
+      name: "runtime", // necessary when using multiple entrypoints on the same page
+    },
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: "vendor",
+          chunks: "all",
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {
