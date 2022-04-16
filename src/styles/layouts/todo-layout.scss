@@ -1,0 +1,24 @@
+$top-height: 35vh;
+
+.layout {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  .top {
+    height: $top-height;
+    width: 100%;
+  }
+
+  .bottom {
+    height: calc(100vh - $top-height);
+    width: 100%;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

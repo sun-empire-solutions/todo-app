@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
+    main: "./src/index.tsx",
     styles: "./src/styles/index.scss",
   },
   output: {
@@ -13,7 +13,7 @@ module.exports = {
     clean: true,
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"],
+    extensions: ["", ".js", ".jsx", ".ts", ".tsx"],
   },
   optimization: {
     runtimeChunk: {
@@ -32,12 +32,26 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/i,
+        test: /\.(jsx?|tsx?)$/i,
         loader: "babel-loader",
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          "resolve-url-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true, // <-- !!IMPORTANT!!
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: "asset/resource",
       },
     ],
   },
