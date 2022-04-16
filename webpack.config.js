@@ -5,6 +5,7 @@ const path = require("path");
 module.exports = {
   entry: {
     main: "./src/index.js",
+    styles: "./src/styles/index.scss",
   },
   output: {
     filename: "[name].js",
@@ -14,6 +15,20 @@ module.exports = {
   resolve: {
     extensions: ["", ".js", ".jsx"],
   },
+  optimization: {
+    runtimeChunk: {
+      name: "runtime", // necessary when using multiple entrypoints on the same page
+    },
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: "vendor",
+          chunks: "all",
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {
@@ -22,14 +37,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
