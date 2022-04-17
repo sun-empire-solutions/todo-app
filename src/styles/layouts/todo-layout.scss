@@ -1,4 +1,8 @@
+$height: 100vh;
 $top-height: 35vh;
+$bottom-height: calc($height - $top-height);
+$top-height-mobile: 30vh;
+$bottom-height-mobile: calc($height - $top-height-mobile);
 
 .layout {
   height: 100vh;
@@ -6,13 +10,23 @@ $top-height: 35vh;
   position: relative;
 
   .top {
-    height: $top-height;
+    height: $top-height-mobile;
     width: 100%;
   }
 
   .bottom {
-    height: calc(100vh - $top-height);
+    height: $bottom-height-mobile;
     width: 100%;
+  }
+
+  @media screen and (min-width: $mobile-breakpoint) {
+    .top {
+      height: $top-height;
+    }
+
+    .bottom {
+      height: $bottom-height;
+    }
   }
 
   .content {
