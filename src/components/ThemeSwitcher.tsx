@@ -10,20 +10,25 @@ import sun from "./../assets/images/icon-sun.svg";
 const ThemeSwitcher = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const trans = () => {
+  const removeTransition = () => {
+    document.documentElement.classList.remove("transition");
+  };
+
+  const addTransition = () => {
     document.documentElement.classList.add("transition");
+  };
+
+  const toggleThemeWithTransition = () => {
+    removeTransition();
+    toggleTheme();
+    addTransition();
     window.setTimeout(() => {
-      document.documentElement.classList.remove("transition");
+      removeTransition();
     }, 2000);
   };
 
-  const handleThemeToggle = () => {
-    toggleTheme();
-    trans();
-  };
-
   return (
-    <button className="theme-switcher" onClick={handleThemeToggle}>
+    <button className="theme-switcher" onClick={toggleThemeWithTransition}>
       <img src={theme === "dark" ? sun : moon} />
     </button>
   );
