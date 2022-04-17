@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { uuid } from "uuidv4";
+
 import { Header } from "../components/Header";
 import { useTodos } from "../hooks/use-todos";
 import { ITodo } from "../types";
@@ -6,7 +8,7 @@ import { ITodo } from "../types";
 const ENTER_KEY_CODE = "Enter";
 
 const TodosContainer = () => {
-  const { todos, saveTodos, addTodo } = useTodos();
+  const { todos, addTodo } = useTodos();
   const [todoValue, setTodoValue] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,7 +17,7 @@ const TodosContainer = () => {
 
   const handleAddTodo = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === ENTER_KEY_CODE) {
-      const newTodo: ITodo = { text: todoValue, completed: false };
+      const newTodo: ITodo = { id: uuid(), text: todoValue, completed: false };
       addTodo(newTodo);
       setTodoValue("");
     }
