@@ -3,6 +3,13 @@
 }
 
 .top-background {
-  background: url("./../../assets/images/bg-desktop-dark.jpg");
+  background: url("./../../assets/images/bg-mobile-dark.jpg");
   background-size: cover;
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+  .top-background {
+    background: url("./../../assets/images/bg-desktop-dark.jpg");
+    background-size: cover;
+  }
 }
