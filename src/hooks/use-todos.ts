@@ -8,7 +8,7 @@ import {
 import { ITodo } from "../types";
 
 const useTodos = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<ITodo[]>([]);
 
   const saveTodos = (todos: ITodo[]) => {
     saveTodosService(todos);
