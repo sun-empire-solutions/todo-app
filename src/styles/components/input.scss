@@ -1,0 +1,36 @@
+.input-container {
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+
+  input {
+    width: 100%;
+    border: none;
+    height: 50px;
+    border-radius: 6px;
+    padding-left: 50px;
+    padding-right: 30px;
+    color: $DarkGrayishBlue;
+    font-size: 16px;
+
+    &:focus-visible {
+      border: none;
+      outline: none !important;
+    }
+
+    &::placeholder{
+      color: hsl(234, 39%, 85%);
+    }
+
+    &:placeholder-shown{
+      color: $BrightBlue;
+    }
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 20px;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+}

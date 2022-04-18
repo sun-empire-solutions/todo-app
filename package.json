@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=development",
-    "dev": "webpack serve --mode=development"
+    "start": "webpack serve --mode=development"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
   "homepage": "https://github.com/sun-empire-solutions/todo-app#readme",
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "util": "^0.12.4",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -35,6 +37,7 @@
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "process": "^0.11.10",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
