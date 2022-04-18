@@ -28,6 +28,7 @@ const Input = ({ onSubmit }: IProps) => {
         value={todoValue}
         onChange={handleChange}
         onKeyDown={handleAddTodo}
+        placeholder="Create a new todo..."
       />
       <div className="input-icon">
         <RadioButton checked={false} disabled onCheck={null} />
