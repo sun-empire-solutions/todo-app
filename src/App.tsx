@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { ThemeSwitcher } from "./components/ThemeSwitcher";
+import { TodosContainer } from "./containers/TodosContainer";
 import { ITheme, ThemeContext } from "./context/ThemeContext";
 import { TodoLayout } from "./layouts/TodoLayout";
 import "./styles/index.scss";
@@ -15,7 +16,7 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme: handleThemeToggle }}>
       <TodoLayout theme={theme}>
-        <ThemeSwitcher />
+        <TodosContainer />
       </TodoLayout>
     </ThemeContext.Provider>
   );

@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const webpack = require("webpack");
 
 
 module.exports = {
@@ -55,7 +56,12 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+    }),
+  ],
   devServer: {
     open: true,
     port: 3000,
