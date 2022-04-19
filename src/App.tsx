@@ -4,7 +4,7 @@ import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { TodosContainer } from "./containers/TodosContainer";
 import { ITheme, ThemeContext } from "./context/ThemeContext";
 import { TodoLayout } from "./layouts/TodoLayout";
-import "./styles/index.scss";
+
 
 const App = () => {
   const [theme, setTheme] = useState<ITheme>("light");
