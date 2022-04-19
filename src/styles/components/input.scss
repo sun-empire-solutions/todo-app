@@ -12,7 +12,7 @@
     padding-left: 50px;
     padding-right: 30px;
     color: $DarkGrayishBlue;
-    font-size: 16px;
+    font-size: 14px;
 
     &:focus-visible {
       border: none;
@@ -35,3 +35,16 @@
     transform: translateY(-50%);
   }
 }
+
+.layout.dark{
+  .content{
+    .todos-container{
+      .input-container {
+        input{
+          background-color: hsl(235, 19%, 35%);
+        }
+      }
+    }
+  }
+}
+

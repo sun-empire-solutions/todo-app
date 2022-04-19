@@ -1,7 +1,6 @@
 .footer-page{
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;    
     width: 100%;
     
     .footer{
@@ -18,15 +17,29 @@
         color: hsl(236, 9%, 61%);
         font-size: 16px;
         font-weight:600;
+
+        p:hover{
+            cursor: pointer;
+        }
     }
     .footer-text{
         display: flex;
         justify-content: center;
         margin-top: 50px;
-       
-        width: 100%;
-       
+        width: 100%; 
         color: hsl(236, 9%, 61%);
     }
 
+}
+
+.layout.dark{
+    .content{
+      .todos-container{
+        .footer-page {
+          .footer{
+            background-color: hsl(235, 19%, 35%);
+          }
+        }
+    }
+}
 }
