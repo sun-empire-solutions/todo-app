@@ -1,0 +1,38 @@
+.todo-item {
+  position: relative;
+  background-color: $VeryLightGray;
+  width: 100%;
+  border: none;
+  height: 50px;
+  border-radius: 6px;
+  color: $DarkGrayishBlue;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  .todo-radio {
+    position: absolute;
+    left: 20px;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .text {
+    width: 85%;
+    padding-left: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .remove-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
