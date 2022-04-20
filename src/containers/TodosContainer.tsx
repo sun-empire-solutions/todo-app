@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { Input } from "../components/Input";
 import { useTodos } from "../hooks/use-todos";
 import { Footer } from "../components/Footer";
-import { TodoItem } from "../components/TodoItem";
+import { TodosList } from "./TodosList";
 
 const TodosContainer = () => {
   const { todos, addTodo } = useTodos();
@@ -11,9 +11,7 @@ const TodosContainer = () => {
     <div className="todos-container">
       <Header title="Todo" />
       <Input onSubmit={addTodo} />
-      {todos?.map((item) => (
-        <TodoItem item={item} onRemove={() => {}} />
-      ))}
+      <TodosList items={todos} />
       <Footer />
     </div>
   );

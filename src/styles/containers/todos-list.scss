@@ -1,0 +1,28 @@
+.todos-list {
+  margin-top: 2rem;
+  height: 70%;
+  background-color: $VeryLightGray;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .items {
+    flex: 1;
+    overflow-y: scroll;
+  }
+
+  .footer {
+    color: hsl(234, 39%, 85%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-top: 1px solid $LightGrayishBlue;
+  }
+
+  .todo-item:not(:last-child) {
+    border-bottom: 1px solid $LightGrayishBlue;
+  }
+}
