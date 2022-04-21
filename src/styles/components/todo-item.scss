@@ -16,11 +16,17 @@
     transform: translateY(-50%);
   }
 
-  .text {
+  .todo-text {
     width: 85%;
     padding-left: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: $DarkGrayishBlue;
+
+    &.is-completed {
+      text-decoration-line: line-through;
+      color: $LightGrayishBlue;
+    }
   }
 
   .remove-icon {

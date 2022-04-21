@@ -9,9 +9,7 @@ const RadioButton = ({ checked, disabled, onCheck }: IProps) => {
   const handleClick = () => {
     if (!disabled) {
       setIsChecked((checked) => !checked);
-      if (!isChecked) {
-        onCheck();
-      }
+      onCheck();
     }
   };
 

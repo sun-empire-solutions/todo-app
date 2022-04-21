@@ -8,14 +8,26 @@ const TodosContainer = () => {
   const { todos, addTodo, saveTodos } = useTodos();
 
   const removeTodo = (id: string) => {
-    saveTodos(todos.filter((items) => items.id !== id));
+    saveTodos(todos.filter((item) => item.id !== id));
+  };
+
+  const completeTodo = (id: string) => {
+    saveTodos(
+      todos.map((item) =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
   };
 
   return (
     <div className="todos-container">
       <Header title="Todo" />
       <Input onSubmit={addTodo} />
-      <TodosList items={todos} onRemove={removeTodo} />
+      <TodosList
+        items={todos}
+        onRemove={removeTodo}
+        onComplete={completeTodo}
+      />
       <Footer />
     </div>
   );

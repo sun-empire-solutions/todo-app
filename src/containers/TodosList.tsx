@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { TodoItem } from "../components/TodoItem";
 import { ITodo } from "../types";
 
-const TodosList = ({ items, onRemove }: IProps) => {
+const TodosList = ({ items, onRemove, onComplete }: IProps) => {
   const itemsLeft = useMemo(
     () => items.filter((item) => !item.completed).length,
     [items]
@@ -12,7 +12,7 @@ const TodosList = ({ items, onRemove }: IProps) => {
     <div className="todos-list">
       <div className="items">
         {items?.map((item) => (
-          <TodoItem item={item} onRemove={onRemove} />
+          <TodoItem item={item} onRemove={onRemove} onComplete={onComplete} />
         ))}
       </div>
       <div className="footer todo-item">
@@ -28,5 +28,6 @@ const TodosList = ({ items, onRemove }: IProps) => {
 type IProps = {
   items: ITodo[];
   onRemove: (id: string) => void;
+  onComplete: (id: string) => void;
 };
 export { TodosList };
