@@ -1,10 +1,13 @@
 import { useState } from "react";
 
+// @ts-ignore
+import iconCheck from "./../assets/images/icon-check.svg";
+
 const RadioButton = ({ checked, disabled, onCheck }: IProps) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleClick = () => {
-    if (!isChecked && !disabled) {
+    if (!disabled) {
       setIsChecked((checked) => !checked);
       onCheck();
     }
@@ -17,6 +20,7 @@ const RadioButton = ({ checked, disabled, onCheck }: IProps) => {
       }`}
       onClick={handleClick}
     >
+      <img src={iconCheck} />
       <div className="white-background"></div>
     </button>
   );
@@ -24,7 +28,7 @@ const RadioButton = ({ checked, disabled, onCheck }: IProps) => {
 
 type IProps = {
   checked: boolean;
-  disabled: boolean;
+  disabled?: boolean;
   onCheck: () => void;
 };
 

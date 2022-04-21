@@ -1,0 +1,31 @@
+.todos-list {
+  margin-top: 2rem;
+  height: 70%;
+  background-color: $VeryLightGray;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .todos-list__items {
+    flex: 1;
+    overflow-y: scroll;
+  }
+
+  .todos-list__footer {
+    color: hsl(234, 39%, 85%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-top: 1px solid $LightGrayishBlue;
+
+    .clear-button {
+      &:hover {
+        cursor: pointer;
+        color: $DarkGrayishBlue;
+      }
+    }
+  }
+}

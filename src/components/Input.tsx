@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { v4 } from "uuid";
-import { useTodos } from "../hooks/use-todos";
+
 import { ITodo } from "../types";
 import { RadioButton } from "./RadioButton";
 
