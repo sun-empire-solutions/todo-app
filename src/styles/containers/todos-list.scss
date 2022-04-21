@@ -29,3 +29,33 @@
     }
   }
 }
+
+.layout.dark{
+  .content{
+    .todos-container{
+      .todos-list{
+        .todos-list__footer.todo-item{
+          background-color: hsl(235, 19%, 35%);
+          color: hsl(236, 9%, 61%);
+        }
+        .todos-list__items{
+          background-color: hsl(235, 19%, 35%);
+      
+          .todo-item{
+            background-color: hsl(235, 19%, 35%);
+            
+            .todo-text {
+              color: $LightGrayishBlue;
+            }
+            .remove-icon{
+               background-color: hsl(236, 9%, 61%);
+            }
+          
+          }
+      
+        }
+
+        }    
+    }
+  }
+}
