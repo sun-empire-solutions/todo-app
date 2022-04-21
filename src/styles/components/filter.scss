@@ -21,8 +21,16 @@
     .selected {
       color: $BrightBlue;
     }
-    p:hover {
-      cursor: pointer;
+
+    button {
+      border: none;
+      background: none;
+      color: hsl(236, 9%, 61%);
+      font-weight: 600;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   .filter-message {

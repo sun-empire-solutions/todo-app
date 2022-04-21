@@ -19,8 +19,13 @@ const TodosList = ({
   return (
     <div className="todos-list">
       <div className="todos-list__items">
-        {items?.map((item) => (
-          <TodoItem item={item} onRemove={onRemove} onComplete={onComplete} />
+        {items?.map((item, index) => (
+          <TodoItem
+            key={index}
+            item={item}
+            onRemove={onRemove}
+            onComplete={onComplete}
+          />
         ))}
       </div>
       <div className="todos-list__footer todo-item">

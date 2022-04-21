@@ -1,37 +1,39 @@
-import { useState } from "react";
+import { IFilter } from "../types";
 
-const Filter = () => {
-  const [state, setState] = useState("");
-  type IFilter = "all" | "active" | "completed";
-
-  const clickAll = (value: IFilter) => () => {
-    if (value != state) {
-      setState(value);
-    } else {
-      setState("");
-    }
+const Filter = ({ filter, onFilterChange }: IProps) => {
+  const handleFilterChange = (event) => {
+    onFilterChange(event.target.name);
   };
+
+  const isSelected = (value: string) => (value === filter ? "selected" : "");
+
   return (
     <div className="filter">
       <div className="filter__options">
-        <p
-          className={`${state === "all" ? "selected" : ""}`}
-          onClick={clickAll("all")}
+        <button
+          name="all"
+          className={isSelected("all")}
+          onClick={handleFilterChange}
+          role="button"
         >
           All
-        </p>
-        <p
-          className={`${state === "active" ? "selected" : ""}`}
-          onClick={clickAll("active")}
+        </button>
+        <button
+          name="active"
+          className={isSelected("active")}
+          onClick={handleFilterChange}
+          role="button"
         >
           Active
-        </p>
-        <p
-          className={`${state === "completed" ? "selected" : ""}`}
-          onClick={clickAll("completed")}
+        </button>
+        <button
+          name="completed"
+          className={isSelected("completed")}
+          onClick={handleFilterChange}
+          role="button"
         >
           Completed
-        </p>
+        </button>
       </div>
       <div className="filter-message">
         <p>Drag and drop to reorder list</p>
@@ -39,5 +41,7 @@ const Filter = () => {
     </div>
   );
 };
+
+type IProps = { filter: IFilter; onFilterChange: (filter: string) => void };
 
 export { Filter };
