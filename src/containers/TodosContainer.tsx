@@ -1,7 +1,7 @@
 import { Header } from "../components/Header";
 import { Input } from "../components/Input";
 import { useTodos } from "../hooks/use-todos";
-import { Footer } from "../components/Footer";
+import { Filter } from "../components/Filter";
 import { TodosList } from "./TodosList";
 
 const TodosContainer = () => {
@@ -33,7 +33,7 @@ const TodosContainer = () => {
         onComplete={completeTodo}
         onClearCompleted={clearCompleted}
       />
-      <Footer />
+      <Filter />
     </div>
   );
 };
