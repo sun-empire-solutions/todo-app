@@ -5,6 +5,10 @@ import { RadioButton } from "./RadioButton";
 import iconCross from "./../assets/images/icon-cross.svg";
 
 const TodoItem = ({ item: { text, id }, onRemove }: IProps) => {
+  const handleRemove = () => {
+    onRemove(id);
+  };
+
   return (
     <div className="todo-item" key={id}>
       <div className="todo-radio">
@@ -12,7 +16,7 @@ const TodoItem = ({ item: { text, id }, onRemove }: IProps) => {
       </div>
 
       <span className="text">{text}</span>
-      <span className="remove-icon">
+      <span className="remove-icon" role="button" onClick={handleRemove}>
         <img src={iconCross} />
       </span>
     </div>
