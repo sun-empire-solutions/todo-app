@@ -8,21 +8,24 @@
   justify-content: space-between;
   overflow: hidden;
 
-  .items {
+  .todos-list__items {
     flex: 1;
     overflow-y: scroll;
   }
 
-  .footer {
+  .todos-list__footer {
     color: hsl(234, 39%, 85%);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     border-top: 1px solid $LightGrayishBlue;
-  }
 
-  .todo-item:not(:last-child) {
-    border-bottom: 1px solid $LightGrayishBlue;
+    .clear-button {
+      &:hover {
+        cursor: pointer;
+        color: $DarkGrayishBlue;
+      }
+    }
   }
 }

@@ -19,6 +19,10 @@ const TodosContainer = () => {
     );
   };
 
+  const clearCompleted = () => {
+    saveTodos(todos.filter((item) => !item.completed));
+  };
+
   return (
     <div className="todos-container">
       <Header title="Todo" />
@@ -27,6 +31,7 @@ const TodosContainer = () => {
         items={todos}
         onRemove={removeTodo}
         onComplete={completeTodo}
+        onClearCompleted={clearCompleted}
       />
       <Footer />
     </div>

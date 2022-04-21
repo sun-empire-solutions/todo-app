@@ -9,6 +9,10 @@
   display: flex;
   align-items: center;
 
+  &:not(:last-child) {
+    border-bottom: 1px solid $LightGrayishBlue;
+  }
+
   .todo-radio {
     position: absolute;
     left: 20px;
