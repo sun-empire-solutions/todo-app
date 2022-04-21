@@ -3,3 +3,5 @@ export type ITodo = {
   text: string;
   completed: boolean;
 };
+
+export type IFilter = "all" | "active" | "completed";

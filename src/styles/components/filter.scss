@@ -1,0 +1,55 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .filter__options {
+    width: 100%;
+    background-color: $VeryLightGray;
+    height: 50px;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    color: hsl(236, 9%, 61%);
+    font-size: 16px;
+    font-weight: 600;
+
+    .selected {
+      color: $BrightBlue;
+    }
+
+    button {
+      border: none;
+      background: none;
+      color: hsl(236, 9%, 61%);
+      font-weight: 600;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .filter-message {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+    color: hsl(236, 9%, 61%);
+  }
+}
+
+.layout.dark {
+  .content {
+    .todos-container {
+      .filter {
+        .filter__options {
+          background-color: hsl(235, 19%, 35%);
+        }
+      }
+    }
+  }
+}

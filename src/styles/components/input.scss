@@ -40,7 +40,15 @@
       .input-container {
         input{
           background-color: hsl(235, 19%, 35%);
-          color: $LightGrayishBlue;
+          &::placeholder{
+            color: $DarkGrayishBlue;
+          }
+          color: hsl(234, 39%, 85%);
+        }
+        .input-icon{
+          .radio-button{
+            border-color: $DarkGrayishBlue;
+          }
         }
       }
     }
