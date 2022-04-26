@@ -1,15 +1,15 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from "react"
 
-import { Header } from "../components/Header";
-import { Input } from "../components/Input";
-import { useTodos } from "../hooks/use-todos";
-import { Filter } from "../components/Filter";
-import { TodosList } from "./TodosList";
-import { IFilter, ITodo } from "../types";
+import { Header } from "../components/Header"
+import { Input } from "../components/Input"
+import { useTodos } from "../hooks/use-todos"
+import { Filter } from "../components/Filter"
+import { TodosList } from "./TodosList"
+import { IFilter, ITodo } from "../types"
 
 const TodosContainer = () => {
-  const { todos, addTodo, saveTodos } = useTodos();
-  const [filter, setFilter] = useState<IFilter>("all");
+  const { todos, addTodo, saveTodos } = useTodos()
+  const [filter, setFilter] = useState<IFilter>("all")
   const filteredTodos = useMemo<IFilteredTodos>(
     () => ({
       all: todos,
@@ -17,27 +17,27 @@ const TodosContainer = () => {
       completed: todos.filter((item) => item.completed),
     }),
     [todos]
-  );
+  )
 
   const removeTodo = (id: string) => {
-    saveTodos(todos.filter((item) => item.id !== id));
-  };
+    saveTodos(todos.filter((item) => item.id !== id))
+  }
 
   const completeTodo = (id: string) => {
     saveTodos(
       todos.map((item) =>
         item.id === id ? { ...item, completed: !item.completed } : item
       )
-    );
-  };
+    )
+  }
 
   const clearCompleted = () => {
-    saveTodos(todos.filter((item) => !item.completed));
-  };
+    saveTodos(todos.filter((item) => !item.completed))
+  }
 
   const handleFilterChange = (value: IFilter) => {
-    setFilter(value);
-  };
+    setFilter(value)
+  }
 
   return (
     <div className="todos-container">
@@ -51,9 +51,9 @@ const TodosContainer = () => {
       />
       <Filter filter={filter} onFilterChange={handleFilterChange} />
     </div>
-  );
-};
+  )
+}
 
-type IFilteredTodos = { [key in IFilter]: ITodo[] };
+type IFilteredTodos = { [key in IFilter]: ITodo[] }
 
-export { TodosContainer };
+export { TodosContainer }
