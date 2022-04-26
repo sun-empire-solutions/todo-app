@@ -27,6 +27,10 @@
     text-overflow: ellipsis;
     color: $DarkGrayishBlue;
 
+    &:hover{
+      cursor: pointer;
+    }
+
     &.is-completed {
       text-decoration-line: line-through;
       color: hsl(234, 39%, 85%);
@@ -41,6 +45,10 @@
     width: 12px;
     height: 12px;
 
+    &:hover{
+      cursor: pointer;
+    }
+    
     img {
       width: 100%;
       height: 100%;
