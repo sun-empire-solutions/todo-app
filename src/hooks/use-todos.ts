@@ -1,30 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 import {
   getTodos,
   addTodo as addTodoService,
   saveTodos as saveTodosService,
-} from "../services/storage";
-import { ITodo } from "../types";
+} from "../services/storage"
+import { ITodo } from "../types"
 
 const useTodos = () => {
-  const [todos, setTodos] = useState<ITodo[]>([]);
+  const [todos, setTodos] = useState<ITodo[]>([])
 
   const saveTodos = (todos: ITodo[]) => {
-    saveTodosService(todos);
-    setTodos(todos);
-  };
+    saveTodosService(todos)
+    setTodos(todos)
+  }
 
   const addTodo = (todo: ITodo) => {
-    addTodoService(todo);
-    setTodos([...todos, todo]);
-  };
+    addTodoService(todo)
+    setTodos([...todos, todo])
+  }
 
   useEffect(() => {
-    setTodos(getTodos());
-  }, []);
+    setTodos(getTodos())
+  }, [])
 
-  return { todos, addTodo, saveTodos };
-};
+  return { todos, addTodo, saveTodos }
+}
 
-export { useTodos };
+export { useTodos }

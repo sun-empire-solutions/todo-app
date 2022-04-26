@@ -1,11 +1,11 @@
-import { IFilter } from "../types";
+import { IFilter } from "../types"
 
 const Filter = ({ filter, onFilterChange }: IProps) => {
   const handleFilterChange = (event) => {
-    onFilterChange(event.target.name);
-  };
+    onFilterChange(event.target.name)
+  }
 
-  const isSelected = (value: string) => (value === filter ? "selected" : "");
+  const isSelected = (value: string) => (value === filter ? "selected" : "")
 
   return (
     <div className="filter">
@@ -39,9 +39,9 @@ const Filter = ({ filter, onFilterChange }: IProps) => {
         <p>Drag and drop to reorder list</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-type IProps = { filter: IFilter; onFilterChange: (filter: string) => void };
+type IProps = { filter: IFilter; onFilterChange: (filter: string) => void }
 
-export { Filter };
+export { Filter }
