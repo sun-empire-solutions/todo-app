@@ -18,11 +18,11 @@
       outline: none !important;
     }
 
-    &::placeholder{
+    &::placeholder {
       color: hsl(234, 39%, 85%);
     }
 
-    &:placeholder-shown{
+    &:placeholder-shown {
       color: $BrightBlue;
     }
   }
@@ -32,27 +32,22 @@
     left: 20px;
     top: 45%;
     transform: translateY(-50%);
-
-    .radio-button{
-      &:hover{
-        cursor: pointer;
-      }
-    }
   }
 }
-.layout.dark{
-  .content{
-    .todos-container{
+
+.layout.dark {
+  .content {
+    .todos-container {
       .input-container {
-        input{
+        input {
           background-color: hsl(235, 19%, 35%);
-          &::placeholder{
+          &::placeholder {
             color: $DarkGrayishBlue;
           }
           color: hsl(234, 39%, 85%);
         }
-        .input-icon{
-          .radio-button{
+        .input-icon {
+          .radio-button {
             border-color: $DarkGrayishBlue;
           }
         }
