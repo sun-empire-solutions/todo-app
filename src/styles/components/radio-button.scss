@@ -18,28 +18,26 @@ $button-background: linear-gradient(
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
- 
-      &.hidden{
-        display: none;
-      }
+    display: none;
     }  
+
   &.is-checked {
     background: $button-background;
     img {
-        &.hidden{
           display: inherit;
-        }
       } 
   }
 
   &:not(.disabled) {
     cursor: pointer;
-
     &:not(.is-checked) {
+      img {
+          display: none;
+      } 
       &:hover {
           background: $button-background;
           border: none;
-
+          
         .white-background {
           position: absolute;
           left: 50%;
