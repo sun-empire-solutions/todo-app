@@ -29,7 +29,7 @@
 
     &.is-completed {
       text-decoration-line: line-through;
-      color: $LightGrayishBlue;
+      color: hsl(234, 39%, 85%);
     }
   }
 
@@ -44,6 +44,22 @@
     img {
       width: 100%;
       height: 100%;
+    }
+  }
+}
+
+.layout.dark{
+  .content{
+    .todos-container{
+      .todos-list{
+        .todos-list__items{
+          .todo-item{
+            .todo-text.is-completed{
+              color: $DarkGrayishBlue;
+            }
+          }
+        }
+      }
     }
   }
 }

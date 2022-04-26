@@ -5,12 +5,16 @@ import iconCheck from "./../assets/images/icon-check.svg";
 
 const RadioButton = ({ checked, disabled, onCheck }: IProps) => {
   const [isChecked, setIsChecked] = useState(checked);
+  const [isVisible, setVisible] = useState("hidden");
 
   const handleClick = () => {
-    if (!disabled) {
-      setIsChecked((checked) => !checked);
-      onCheck();
+    setIsChecked((checked) => !checked);
+    if (!isChecked) {
+      setVisible("");
+    } else {
+      setVisible("hidden");
     }
+    onCheck();
   };
 
   return (
@@ -20,7 +24,7 @@ const RadioButton = ({ checked, disabled, onCheck }: IProps) => {
       }`}
       onClick={handleClick}
     >
-      <img src={iconCheck} />
+      <img src={iconCheck} className={isVisible} />
       <div className="white-background"></div>
     </button>
   );
