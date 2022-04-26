@@ -7,7 +7,7 @@ $button-background: linear-gradient(
 
 .radio-button {
   background-color: transparent;
-  border: 1px solid $LightGrayishBlue;
+  border: 1px solid $DarkGrayishBlue;
   width: $button-size;
   height: $button-size;
   border-radius: 50%;
@@ -18,31 +18,43 @@ $button-background: linear-gradient(
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .white-background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    width: calc($button-size - 3px);
+    height: calc($button-size - 3px);
   }
 
   &.is-checked {
     background: $button-background;
+    img {
+      display: inherit;
+    }
   }
 
   &:not(.disabled) {
     cursor: pointer;
-
     &:not(.is-checked) {
       &:hover {
         background: $button-background;
         border: none;
 
         .white-background {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          border-radius: 50%;
-          transform: translate(-50%, -50%);
-          width: calc($button-size - 3px);
-          height: calc($button-size - 3px);
           background-color: $VeryLightGray;
         }
       }
     }
+  }
+}
+
+.layout.dark {
+  .white-background {
+    background-color: hsl(235, 19%, 35%);
   }
 }
