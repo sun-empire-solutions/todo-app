@@ -40,7 +40,7 @@
     .todos-container {
       .input-container {
         input {
-          background-color: hsl(235, 19%, 35%);
+          background-color: $VeryDarkDesaturatedBlue;
           &::placeholder {
             color: $DarkGrayishBlue;
           }
