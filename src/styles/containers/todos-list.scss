@@ -1,7 +1,6 @@
 .todos-list {
   margin-top: 2rem;
   height: 70%;
-  background-color: $VeryLightGray;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -11,6 +10,7 @@
   .todos-list__items {
     flex: 1;
     overflow-y: scroll;
+    background-color: $VeryLightGray;
   }
 
   .todos-list__footer {
@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    border-top: 1px solid $LightGrayishBlue;
+    border-bottom: 1px solid hsl(0deg 0% 58% / 13%);
 
     .clear-button {
       &:hover {
@@ -35,22 +35,19 @@
     .todos-container {
       .todos-list {
         .todos-list__footer.todo-item {
-          background-color: hsl(235, 19%, 35%);
+          background-color: $VeryDarkDesaturatedBlue;
           color: hsl(236, 9%, 61%);
         }
         .todos-list__items {
-          background-color: hsl(235, 19%, 35%);
+          background-color: $VeryDarkDesaturatedBlue;
 
           .todo-item {
-            background-color: hsl(235, 19%, 35%);
+            background-color: $VeryDarkDesaturatedBlue;
             .todo-text.is-completed {
               color: $DarkGrayishBlue;
             }
             .todo-text {
               color: $LightGrayishBlue;
-            }
-            .remove-icon {
-              background-color: hsl(236, 9%, 61%);
             }
           }
         }

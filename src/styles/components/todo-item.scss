@@ -10,7 +10,7 @@
   align-items: center;
 
   &:not(:last-child) {
-    border-bottom: 1px solid $LightGrayishBlue;
+    border-bottom: 1px solid hsl(0deg 0% 58% / 13%);
   }
 
   .todo-radio {
