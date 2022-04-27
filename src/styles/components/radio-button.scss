@@ -21,16 +21,6 @@ $button-background: linear-gradient(
     display: none;
   }
 
-  // .white-background {
-  //  position: absolute;
- //   left: 50%;
- //   top: 50%;
-  //  border-radius: 50%;
- //   transform: translate(-50%, -50%);
- //   width: calc($button-size - 3px);
- //   height: calc($button-size - 3px);
-  // }
-
   &.is-checked {
     background: $button-background;
     img {
@@ -42,15 +32,44 @@ $button-background: linear-gradient(
     cursor: pointer;
     &:not(.is-checked) {
       &:hover {
-        border: 1px solid hsl(192, 100%, 67%);
-        //border: none;
-
-        //.white-background {
-          //background-color: $VeryLightGray;
-       // }
+        background: $button-background;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          width: calc($button-size - 3px);
+          height: calc($button-size - 3px);
+          background-color: $VeryLightGray;
+          //background-color: hsl(235, 19%, 35%);
+        }
       }
     }
   }
 }
 
-
+.layout.dark {
+  .radio-button {
+    &:not(.disabled) {
+      cursor: pointer;
+      &:not(.is-checked) {
+        &:hover {
+          background: $button-background;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            width: calc($button-size - 3px);
+            height: calc($button-size - 3px);
+            background-color: hsl(235, 19%, 35%);
+          }
+        }
+      }
+    }
+  }
+}
