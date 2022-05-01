@@ -23,6 +23,7 @@
   "homepage": "https://github.com/sun-empire-solutions/todo-app#readme",
   "dependencies": {
     "react": "^18.0.0",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^18.0.0",
     "util": "^0.12.4",
     "uuidv4": "^6.2.13"
