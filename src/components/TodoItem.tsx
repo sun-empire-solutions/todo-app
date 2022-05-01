@@ -1,10 +1,10 @@
-import { Draggable } from "react-beautiful-dnd";
+import { Draggable } from "react-beautiful-dnd"
 
-import { ITodo } from "./../types";
-import { RadioButton } from "./RadioButton";
+import { ITodo } from "./../types"
+import { RadioButton } from "./RadioButton"
 
 // @ts-ignore
-import iconCross from "./../assets/images/icon-cross.svg";
+import iconCross from "./../assets/images/icon-cross.svg"
 
 const TodoItem = ({
   item: { text, id, completed },
@@ -13,12 +13,12 @@ const TodoItem = ({
   onComplete,
 }: IProps) => {
   const handleRemove = () => {
-    onRemove(id);
-  };
+    onRemove(id)
+  }
 
   const handleComplete = () => {
-    onComplete(id);
-  };
+    onComplete(id)
+  }
 
   return (
     <Draggable key={id} draggableId={id} index={index}>
@@ -42,14 +42,14 @@ const TodoItem = ({
         </div>
       )}
     </Draggable>
-  );
-};
+  )
+}
 
 type IProps = {
-  item: ITodo;
-  index: number;
-  onRemove: (id: string) => void;
-  onComplete: (id: string) => void;
-};
+  item: ITodo
+  index: number
+  onRemove: (id: string) => void
+  onComplete: (id: string) => void
+}
 
-export { TodoItem };
+export { TodoItem }

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react"
+import { DragDropContext, DropResult } from "react-beautiful-dnd"
 
 import { Header } from "../components/Header"
 import { Input } from "../components/Input"
@@ -39,16 +40,34 @@ const TodosContainer = () => {
     setFilter(value)
   }
 
+  const handleDragEnd = ({ source, destination }: DropResult) => {
+    if (!destination) {
+      return
+    }
+    if (
+      source.index === destination.index &&
+      source.droppableId === destination.droppableId
+    ) {
+      return
+    }
+    const todosCopy = [...todos]
+    const [removed] = todosCopy.splice(source.index, 1)
+    todosCopy.splice(destination.index, 0, removed)
+    saveTodos(todosCopy)
+  }
+
   return (
     <div className="todos-container">
       <Header title="Todo" />
       <Input onSubmit={addTodo} />
-      <TodosList
-        items={filteredTodos[filter]}
-        onRemove={removeTodo}
-        onComplete={completeTodo}
-        onClearCompleted={clearCompleted}
-      />
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <TodosList
+          items={filteredTodos[filter]}
+          onRemove={removeTodo}
+          onComplete={completeTodo}
+          onClearCompleted={clearCompleted}
+        />
+      </DragDropContext>
       <Filter filter={filter} onFilterChange={handleFilterChange} />
     </div>
   )

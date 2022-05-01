@@ -27,12 +27,14 @@
       background: none;
       color: hsl(236, 9%, 61%);
       font-weight: 600;
+      flex: 1;
 
       &:hover {
         cursor: pointer;
       }
     }
   }
+
   .filter-message {
     display: flex;
     justify-content: center;
