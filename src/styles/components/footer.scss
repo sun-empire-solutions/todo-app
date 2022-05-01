@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+
+  .footer-text {
+    color: hsl(236, 9%, 61%);
+  }
+}
