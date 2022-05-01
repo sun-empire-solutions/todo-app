@@ -7,6 +7,7 @@ import { useTodos } from "../hooks/use-todos"
 import { Filter } from "../components/Filter"
 import { TodosList } from "./TodosList"
 import { IFilter, ITodo } from "../types"
+import { Footer } from "../components/Footer"
 
 const TodosContainer = () => {
   const { todos, addTodo, saveTodos } = useTodos()
@@ -69,6 +70,7 @@ const TodosContainer = () => {
         />
       </DragDropContext>
       <Filter filter={filter} onFilterChange={handleFilterChange} />
+      <Footer />
     </div>
   )
 }

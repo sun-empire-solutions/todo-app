@@ -35,9 +35,6 @@ const Filter = ({ filter, onFilterChange }: IProps) => {
           Completed
         </button>
       </div>
-      <div className="filter-message">
-        <p>Drag and drop to reorder list</p>
-      </div>
     </div>
   )
 }
