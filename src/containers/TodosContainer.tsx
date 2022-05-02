@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react"
 import { DragDropContext, DropResult } from "react-beautiful-dnd"
+import { useScreenDimensions } from "use-screen-dimensions"
 
 import { Header } from "../components/Header"
 import { Input } from "../components/Input"
@@ -9,9 +10,12 @@ import { TodosList } from "./TodosList"
 import { IFilter, ITodo } from "../types"
 import { Footer } from "../components/Footer"
 
+const MOBILE_BREAKPOINT = 600
+
 const TodosContainer = () => {
   const { todos, addTodo, saveTodos } = useTodos()
   const [filter, setFilter] = useState<IFilter>("all")
+  const { width } = useScreenDimensions()
   const filteredTodos = useMemo<IFilteredTodos>(
     () => ({
       all: todos,
@@ -20,6 +24,7 @@ const TodosContainer = () => {
     }),
     [todos]
   )
+  const isMobile = useMemo(() => width <= MOBILE_BREAKPOINT, [width])
 
   const removeTodo = (id: string) => {
     saveTodos(todos.filter((item) => item.id !== id))
@@ -67,9 +72,15 @@ const TodosContainer = () => {
           onRemove={removeTodo}
           onComplete={completeTodo}
           onClearCompleted={clearCompleted}
-        />
+        >
+          {!isMobile && (
+            <Filter filter={filter} onFilterChange={handleFilterChange} />
+          )}
+        </TodosList>
       </DragDropContext>
-      <Filter filter={filter} onFilterChange={handleFilterChange} />
+      {isMobile && (
+        <Filter filter={filter} onFilterChange={handleFilterChange} />
+      )}
       <Footer />
     </div>
   )

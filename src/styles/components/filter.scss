@@ -3,6 +3,10 @@
   flex-direction: column;
   width: 100%;
 
+  @media screen and (min-width: $mobile-breakpoint) {
+    width: 180px;
+  }
+
   .filter__options {
     width: 100%;
     background-color: $VeryLightGray;
@@ -18,7 +22,8 @@
     font-weight: 600;
 
     @media screen and (min-width: $mobile-breakpoint) {
-      display: none;
+      margin-top: 0;
+      padding: 0;
     }
 
     .selected {
@@ -31,6 +36,10 @@
       color: hsl(236, 9%, 61%);
       font-weight: 600;
       padding: 0 1.5rem;
+
+      @media screen and (min-width: $mobile-breakpoint) {
+        padding: 0 0.5rem;
+      }
 
       &:hover {
         cursor: pointer;

@@ -6,6 +6,7 @@ import { ITodo } from "../types"
 
 const TodosList = ({
   items,
+  children,
   onRemove,
   onComplete,
   onClearCompleted,
@@ -38,6 +39,7 @@ const TodosList = ({
       </Droppable>
       <div className="todos-list__footer todo-item">
         <span className="items-left">{`${itemsLeft} items left`}</span>
+        {children}
         <span
           className="clear-button"
           role="button"
@@ -52,6 +54,7 @@ const TodosList = ({
 
 type IProps = {
   items: ITodo[]
+  children?: JSX.Element
   onRemove: (id: string) => void
   onComplete: (id: string) => void
   onClearCompleted: () => void
