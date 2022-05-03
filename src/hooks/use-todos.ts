@@ -16,8 +16,8 @@ const useTodos = () => {
   }
 
   const addTodo = (todo: ITodo) => {
-    addTodoService(todo)
-    setTodos([...todos, todo])
+    const addedTodos = addTodoService(todo)
+    setTodos(addedTodos)
   }
 
   useEffect(() => {

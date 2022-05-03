@@ -5,12 +5,11 @@ const TODOS_STORAGE_KEY = "TODO_LIST"
 const getTodos = (): ITodo[] =>
   JSON.parse(localStorage.getItem(TODOS_STORAGE_KEY)) ?? []
 
-const addTodo = (todo: ITodo) => {
+const addTodo = (todo: ITodo): ITodo[] => {
   const currentTodosList = getTodos() ?? []
-  localStorage.setItem(
-    TODOS_STORAGE_KEY,
-    JSON.stringify([...currentTodosList, todo])
-  )
+  const todosToBeSaved = [todo, ...currentTodosList]
+  localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(todosToBeSaved))
+  return todosToBeSaved
 }
 
 const saveTodos = (todos: ITodo[]) => {
