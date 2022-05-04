@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react"
 import { DragDropContext, DropResult } from "react-beautiful-dnd"
-import { useScreenDimensions } from "use-screen-dimensions"
 
 import { Header } from "../components/Header"
 import { useTodos } from "../hooks/use-todos"
@@ -9,13 +8,12 @@ import { TodosList } from "./TodosList"
 import { IFilter, ITodo } from "../types"
 import { Footer } from "../components/Footer"
 import { TodosForm } from "./TodosForm"
-
-const MOBILE_BREAKPOINT = 600
+import { useBreakPoints } from "../hooks/use-breakpoints"
 
 const TodosContainer = () => {
   const { todos, addTodo, saveTodos } = useTodos()
   const [filter, setFilter] = useState<IFilter>("all")
-  const { width } = useScreenDimensions()
+  const { isMobile } = useBreakPoints()
   const filteredTodos = useMemo<IFilteredTodos>(
     () => ({
       all: todos,
@@ -24,7 +22,6 @@ const TodosContainer = () => {
     }),
     [todos]
   )
-  const isMobile = useMemo(() => width <= MOBILE_BREAKPOINT, [width])
 
   const removeTodo = (id: string) => {
     saveTodos(todos.filter((item) => item.id !== id))

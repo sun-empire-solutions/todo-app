@@ -1,0 +1,17 @@
+.todos-form {
+  display: flex;
+  align-items: flex-end;
+
+  .add-button {
+    height: 50px;
+    width: 60px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #ac74f3cf;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

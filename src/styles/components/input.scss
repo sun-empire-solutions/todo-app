@@ -7,11 +7,15 @@
     width: 100%;
     border: none;
     height: 50px;
-    border-radius: 6px;
+    border-radius: 6px 0 0 6px;
     padding-left: 50px;
     padding-right: 30px;
     color: $DarkGrayishBlue;
     font-size: 14px;
+
+    @media screen and (min-width: $mobile-breakpoint) {
+      border-radius: 6px;
+    }
 
     &:focus-visible {
       border: none;
