@@ -24,9 +24,13 @@ const TodosForm = ({ onSubmit }: IProps) => {
   }
 
   const addTodo = () => {
-    const newTodo: ITodo = { id: v4(), text: inputValue, completed: false }
-    onSubmit(newTodo)
-    setInputValue("")
+    const valueCopy = inputValue
+    const emptyPattern = valueCopy.replaceAll(/\s/g, "")
+    if (inputValue && emptyPattern.length) {
+      const newTodo: ITodo = { id: v4(), text: inputValue, completed: false }
+      onSubmit(newTodo)
+      setInputValue("")
+    }
   }
 
   return (
