@@ -37,7 +37,7 @@ const TodosList = ({
           </div>
         )}
       </Droppable>
-      <div className="todos-list__footer todo-item">
+      <div className="todos-list-footer todo-item">
         <span className="items-left">{`${itemsLeft} items left`}</span>
         {children}
         <span

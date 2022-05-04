@@ -1,5 +1,4 @@
 .todo-item {
-  background-color: $VeryLightGray;
   width: 100%;
   border: none;
   height: 50px;
@@ -23,10 +22,6 @@
     color: $DarkGrayishBlue;
     padding: 0 0.75rem;
     font-weight: 600;
-
-    &:hover {
-      cursor: pointer;
-    }
 
     &.is-completed {
       text-decoration-line: line-through;

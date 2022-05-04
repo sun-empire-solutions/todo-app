@@ -7,7 +7,7 @@
     width: 180px;
   }
 
-  .filter__options {
+  .filter-options {
     width: 100%;
     background-color: $VeryLightGray;
     height: 50px;
@@ -43,18 +43,6 @@
 
       &:hover {
         cursor: pointer;
-      }
-    }
-  }
-}
-
-.layout.dark {
-  .content {
-    .todos-container {
-      .filter {
-        .filter__options {
-          background-color: $VeryDarkDesaturatedBlue;
-        }
       }
     }
   }

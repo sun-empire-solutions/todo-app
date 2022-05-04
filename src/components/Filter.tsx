@@ -9,7 +9,7 @@ const Filter = ({ filter, onFilterChange }: IProps) => {
 
   return (
     <div className="filter">
-      <div className="filter__options">
+      <div className="filter-options">
         <button
           name="all"
           className={isSelected("all")}
