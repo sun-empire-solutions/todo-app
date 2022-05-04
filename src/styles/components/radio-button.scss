@@ -43,31 +43,6 @@ $button-background: linear-gradient(
           width: calc($button-size - 3px);
           height: calc($button-size - 3px);
           background-color: $VeryLightGray;
-          //background-color: hsl(235, 19%, 35%);
-        }
-      }
-    }
-  }
-}
-
-.layout.dark {
-  .radio-button {
-    &:not(.disabled) {
-      cursor: pointer;
-      &:not(.is-checked) {
-        &:hover {
-          background: $button-background;
-          &::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            width: calc($button-size - 3px);
-            height: calc($button-size - 3px);
-            background-color: hsl(235, 19%, 35%);
-          }
         }
       }
     }

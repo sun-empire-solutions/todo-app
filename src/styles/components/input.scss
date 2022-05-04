@@ -38,24 +38,3 @@
     transform: translateY(-50%);
   }
 }
-
-.layout.dark {
-  .content {
-    .todos-container {
-      .input-container {
-        input {
-          background-color: $VeryDarkDesaturatedBlue;
-          &::placeholder {
-            color: $DarkGrayishBlue;
-          }
-          color: hsl(234, 39%, 85%);
-        }
-        .input-icon {
-          .radio-button {
-            border-color: $DarkGrayishBlue;
-          }
-        }
-      }
-    }
-  }
-}

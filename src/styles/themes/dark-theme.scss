@@ -1,3 +1,10 @@
+$button-size: 20px;
+$button-background: linear-gradient(
+  145deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+
 .bg-color {
   background-color: $VeryDarkBlue;
 }
@@ -16,4 +23,64 @@
 
 .add-button-background {
   background-color: rgb(75 14 192 / 71%);
+}
+
+.input-container {
+  input {
+    background-color: $VeryDarkDesaturatedBlue;
+    &::placeholder {
+      color: $DarkGrayishBlue;
+    }
+    color: hsl(234, 39%, 85%);
+  }
+}
+
+.todos-list {
+  background-color: $VeryDarkDesaturatedBlue;
+}
+.todos-list__items {
+  background-color: $VeryDarkDesaturatedBlue;
+  .todo-item {
+    background-color: $VeryDarkDesaturatedBlue;
+    .todo-text.is-completed {
+      color: $DarkGrayishBlue;
+    }
+    .todo-text {
+      color: hsl(234, 39%, 85%);
+    }
+  }
+}
+
+.radio-button {
+  border-color: $DarkGrayishBlue;
+  &:not(.disabled) {
+    cursor: pointer;
+    &:not(.is-checked) {
+      &:hover {
+        background: $button-background;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          width: calc($button-size - 3px);
+          height: calc($button-size - 3px);
+          background-color: hsl(235, 19%, 35%);
+        }
+      }
+    }
+  }
+}
+
+.todos-list-footer.todo-item {
+  background-color: $VeryDarkDesaturatedBlue;
+  color: hsl(236, 9%, 61%);
+}
+
+.filter {
+  .filter-options {
+    background-color: $VeryDarkDesaturatedBlue;
+  }
 }
