@@ -37,7 +37,10 @@ const TodosForm = ({ onSubmit }: IProps) => {
         handleAddTodo={handleEnterPress}
       />
       {isMobile && (
-        <Button classNames="add-button" onClick={addTodo}>
+        <Button
+          classNames="add-button add-button-background "
+          onClick={addTodo}
+        >
           <BsPlus />
         </Button>
       )}
