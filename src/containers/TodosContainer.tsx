@@ -3,12 +3,12 @@ import { DragDropContext, DropResult } from "react-beautiful-dnd"
 import { useScreenDimensions } from "use-screen-dimensions"
 
 import { Header } from "../components/Header"
-import { Input } from "../components/Input"
 import { useTodos } from "../hooks/use-todos"
 import { Filter } from "../components/Filter"
 import { TodosList } from "./TodosList"
 import { IFilter, ITodo } from "../types"
 import { Footer } from "../components/Footer"
+import { TodosForm } from "./TodosForm"
 
 const MOBILE_BREAKPOINT = 600
 
@@ -65,7 +65,7 @@ const TodosContainer = () => {
   return (
     <div className="todos-container">
       <Header title="Todo" />
-      <Input onSubmit={addTodo} />
+      <TodosForm onSubmit={addTodo} />
       <DragDropContext onDragEnd={handleDragEnd}>
         <TodosList
           items={filteredTodos[filter]}

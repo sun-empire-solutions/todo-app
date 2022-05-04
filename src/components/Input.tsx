@@ -1,32 +1,12 @@
-import { useState } from "react"
-import { v4 } from "uuid"
-
-import { ITodo } from "../types"
 import { RadioButton } from "./RadioButton"
 
-const ENTER_KEY_CODE = "Enter"
-
-const Input = ({ onSubmit }: IProps) => {
-  const [todoValue, setTodoValue] = useState("")
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTodoValue(event.target.value)
-  }
-
-  const handleAddTodo = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.code === ENTER_KEY_CODE) {
-      const newTodo: ITodo = { id: v4(), text: todoValue, completed: false }
-      onSubmit(newTodo)
-      setTodoValue("")
-    }
-  }
-
+const Input = ({ inputValue, handleInputChange, handleAddTodo }: IProps) => {
   return (
     <div className="input-container">
       <input
         type="text"
-        value={todoValue}
-        onChange={handleChange}
+        value={inputValue}
+        onChange={handleInputChange}
         onKeyDown={handleAddTodo}
         placeholder="Create a new todo..."
       />
@@ -38,7 +18,9 @@ const Input = ({ onSubmit }: IProps) => {
 }
 
 type IProps = {
-  onSubmit: (todo: ITodo) => void
+  inputValue: string
+  handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleAddTodo: (event: React.KeyboardEvent<HTMLInputElement>) => void
 }
 
 export { Input }
