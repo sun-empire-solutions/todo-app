@@ -12,10 +12,8 @@ $button-background: linear-gradient(
 .top-background {
   background: url("./../../assets/images/bg-mobile-dark.jpg");
   background-size: cover;
-}
 
-@media screen and (min-width: $mobile-breakpoint) {
-  .top-background {
+  @media screen and (min-width: $mobile-breakpoint) {
     background: url("./../../assets/images/bg-desktop-dark.jpg");
     background-size: cover;
   }
@@ -38,13 +36,16 @@ $button-background: linear-gradient(
 .todos-list {
   background-color: $VeryDarkDesaturatedBlue;
 }
+
 .todos-list__items {
   background-color: $VeryDarkDesaturatedBlue;
+
   .todo-item {
     background-color: $VeryDarkDesaturatedBlue;
     .todo-text.is-completed {
       color: $DarkGrayishBlue;
     }
+
     .todo-text {
       color: hsl(234, 39%, 85%);
     }
@@ -79,8 +80,8 @@ $button-background: linear-gradient(
   color: hsl(236, 9%, 61%);
 }
 
-.filter {
-  .filter-options {
+.filters-background {
+  @media screen and (max-width: $mobile-breakpoint) {
     background-color: $VeryDarkDesaturatedBlue;
   }
 }

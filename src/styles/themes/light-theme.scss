@@ -5,10 +5,8 @@
 .top-background {
   background: url("./../../assets/images/bg-mobile-light.jpg");
   background-size: cover;
-}
 
-@media screen and (min-width: $mobile-breakpoint) {
-  .top-background {
+  @media screen and (min-width: $mobile-breakpoint) {
     background: url("./../../assets/images/bg-desktop-light.jpg");
     background-size: cover;
   }
@@ -16,4 +14,10 @@
 
 .add-button-background {
   background-color: #ac74f3cf;
+}
+
+.filters-background {
+  @media screen and (max-width: $mobile-breakpoint) {
+    background-color: $VeryLightGray;
+  }
 }
