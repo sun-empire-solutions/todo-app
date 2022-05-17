@@ -22,6 +22,7 @@
     color: $DarkGrayishBlue;
     padding: 0 0.75rem;
     font-weight: 600;
+    margin-top: 0.25rem;
 
     &.is-completed {
       text-decoration-line: line-through;
@@ -38,7 +39,7 @@
     }
 
     img {
-      width: 31%;
+      width: 35%;
     }
   }
 }
