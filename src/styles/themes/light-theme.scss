@@ -3,11 +3,11 @@
 }
 
 .top-background {
-  background: url("./../../assets/images/bg-mobile-light.jpg");
+  background: $LightTopBackgroundMobile;
   background-size: cover;
 
   @media screen and (min-width: $mobile-breakpoint) {
-    background: url("./../../assets/images/bg-desktop-light.jpg");
+    background: $LightTopBackgroundDesktop;
     background-size: cover;
   }
 }

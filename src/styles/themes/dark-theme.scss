@@ -10,11 +10,11 @@ $button-background: linear-gradient(
 }
 
 .top-background {
-  background: url("./../../assets/images/bg-mobile-dark.jpg");
+  background: $DarkTopBackgroundMobile;
   background-size: cover;
 
   @media screen and (min-width: $mobile-breakpoint) {
-    background: url("./../../assets/images/bg-desktop-dark.jpg");
+    background: $DarkTopBackgroundDesktop;
     background-size: cover;
   }
 }
