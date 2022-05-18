@@ -5,3 +5,18 @@
 .dark {
   @import "./dark-theme.scss";
 }
+
+.preload-images {
+  .bg-1 {
+    background-image: $DarkTopBackgroundDesktop;
+  }
+  .bg-2 {
+    background-image: $DarkTopBackgroundMobile;
+  }
+  .bg-3 {
+    background-image: $LightTopBackgroundDesktop;
+  }
+  .bg-4 {
+    background-image: $LightTopBackgroundMobile;
+  }
+}
