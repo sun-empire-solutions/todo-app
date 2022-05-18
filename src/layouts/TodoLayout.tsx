@@ -12,7 +12,7 @@ const TodoLayout = ({ children, theme }: IProps) => (
 const PreloadImages = () => (
   <div className="preload-images">
     {[...Array(4)].map((_, index) => (
-      <div className={`bg-${index + 1}`}></div>
+      <div key={index} className={`bg-${index + 1}`}></div>
     ))}
   </div>
 )
