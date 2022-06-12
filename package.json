@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/sun-empire-solutions/todo-app#readme",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
     "react": "^18.0.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^18.0.0",
