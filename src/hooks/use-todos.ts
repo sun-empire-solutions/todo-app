@@ -1,30 +1,52 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 
-import {
-  getTodos,
-  addTodo as addTodoService,
-  saveTodos as saveTodosService,
-} from "../services/storage"
+import { saveTodos as saveTodosService } from "../services/storage"
 import { ITodo } from "../types"
+import {
+  addTodo as addTodoAction,
+  removeTodo as removeTodoAction,
+  completeTodo as completeTodoAction,
+  clearCompletedTodos as clearCompletedTodosAction,
+  todosSelector,
+} from "../redux/slices/todos"
 
 const useTodos = () => {
-  const [todos, setTodos] = useState<ITodo[]>([])
+  const todos = useSelector(todosSelector)
+  const dispatch = useDispatch()
 
   const saveTodos = (todos: ITodo[]) => {
     saveTodosService(todos)
-    setTodos(todos)
   }
 
   const addTodo = (todo: ITodo) => {
-    const addedTodos = addTodoService(todo)
-    setTodos(addedTodos)
+    dispatch(addTodoAction(todo))
+  }
+
+  const removeTodo = (id: string) => {
+    dispatch(removeTodoAction(id))
+  }
+
+  const completeTodo = (id: string) => {
+    dispatch(completeTodoAction(id))
+  }
+
+  const clearCompletedTodos = () => {
+    dispatch(clearCompletedTodosAction())
   }
 
   useEffect(() => {
-    setTodos(getTodos())
-  }, [])
+    saveTodos(todos)
+  }, [todos])
 
-  return { todos, addTodo, saveTodos }
+  return {
+    todos,
+    addTodo,
+    saveTodos,
+    completeTodo,
+    removeTodo,
+    clearCompletedTodos,
+  }
 }
 
 export { useTodos }

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSelector, createSlice } from "@reduxjs/toolkit"
 
 import { getTodos } from "./../../services/storage"
 
@@ -10,14 +10,27 @@ const todosSlice = createSlice({
       state.push(action.payload)
     },
     completeTodo: (state, action) => {
-      state[action.payload].completed = true
+      const todo = state.find((todo) => todo.id === action.payload)
+      if (todo) {
+        todo.completed = !todo.completed
+      }
     },
     removeTodo: (state, action) => {
       state.splice(action.payload, 1)
     },
+    clearCompletedTodos: (state) => {
+      return state.filter((todo) => !todo.completed)
+    },
   },
 })
 
-export const { addTodo, completeTodo, removeTodo } = todosSlice.actions
+const selectSelf = (state) => state
+
+const todosSelector = createSelector(selectSelf, (state) => state.todos)
+
+export { todosSelector }
+
+export const { addTodo, completeTodo, removeTodo, clearCompletedTodos } =
+  todosSlice.actions
 
 export const todosReducer = todosSlice.reducer

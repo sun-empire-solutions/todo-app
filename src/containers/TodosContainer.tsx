@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
 import { DragDropContext, DropResult } from "react-beautiful-dnd"
 
 import { Header } from "../components/Header"
@@ -9,10 +9,18 @@ import { IFilter, ITodo } from "../types"
 import { Footer } from "../components/Footer"
 import { TodosForm } from "./TodosForm"
 import { useBreakPoints } from "../hooks/use-breakpoints"
+import { useFilter } from "../hooks/use-filter"
 
 const TodosContainer = () => {
-  const { todos, addTodo, saveTodos } = useTodos()
-  const [filter, setFilter] = useState<IFilter>("all")
+  const {
+    todos,
+    addTodo,
+    saveTodos,
+    completeTodo,
+    removeTodo,
+    clearCompletedTodos,
+  } = useTodos()
+  const { filter, handleFilterChange } = useFilter()
   const { isMobile } = useBreakPoints()
   const filteredTodos = useMemo<IFilteredTodos>(
     () => ({
@@ -22,26 +30,6 @@ const TodosContainer = () => {
     }),
     [todos]
   )
-
-  const removeTodo = (id: string) => {
-    saveTodos(todos.filter((item) => item.id !== id))
-  }
-
-  const completeTodo = (id: string) => {
-    saveTodos(
-      todos.map((item) =>
-        item.id === id ? { ...item, completed: !item.completed } : item
-      )
-    )
-  }
-
-  const clearCompleted = () => {
-    saveTodos(todos.filter((item) => !item.completed))
-  }
-
-  const handleFilterChange = (value: IFilter) => {
-    setFilter(value)
-  }
 
   const handleDragEnd = ({ source, destination }: DropResult) => {
     if (!destination) {
@@ -68,7 +56,7 @@ const TodosContainer = () => {
           items={filteredTodos[filter]}
           onRemove={removeTodo}
           onComplete={completeTodo}
-          onClearCompleted={clearCompleted}
+          onClearCompleted={clearCompletedTodos}
         >
           {!isMobile && (
             <Filter filter={filter} onFilterChange={handleFilterChange} />
