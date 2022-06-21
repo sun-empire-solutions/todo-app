@@ -8,6 +8,7 @@ import {
   removeTodo as removeTodoAction,
   completeTodo as completeTodoAction,
   clearCompletedTodos as clearCompletedTodosAction,
+  moveTodo as moveTodoAction,
   todosSelector,
 } from "../redux/slices/todos"
 
@@ -31,6 +32,10 @@ const useTodos = () => {
     dispatch(completeTodoAction(id))
   }
 
+  const moveTodo = (from: number, to: number) => {
+    dispatch(moveTodoAction({ source: from, destination: to }))
+  }
+
   const clearCompletedTodos = () => {
     dispatch(clearCompletedTodosAction())
   }
@@ -45,6 +50,7 @@ const useTodos = () => {
     saveTodos,
     completeTodo,
     removeTodo,
+    moveTodo,
     clearCompletedTodos,
   }
 }
