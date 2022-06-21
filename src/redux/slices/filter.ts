@@ -1,4 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit"
+
 import { IFilter } from "../../types"
 
 const filterSlice = createSlice({

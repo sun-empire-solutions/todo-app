@@ -15,7 +15,7 @@ const TodosContainer = () => {
   const {
     todos,
     addTodo,
-    saveTodos,
+    moveTodo,
     completeTodo,
     removeTodo,
     clearCompletedTodos,
@@ -41,10 +41,7 @@ const TodosContainer = () => {
     ) {
       return
     }
-    const todosCopy = [...todos]
-    const [removed] = todosCopy.splice(source.index, 1)
-    todosCopy.splice(destination.index, 0, removed)
-    saveTodos(todosCopy)
+    moveTodo(source.index, destination.index)
   }
 
   return (
