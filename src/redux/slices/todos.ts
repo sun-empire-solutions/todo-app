@@ -16,7 +16,7 @@ const todosSlice = createSlice({
       }
     },
     removeTodo: (state, action) => {
-      state.splice(action.payload, 1)
+      return state.filter((todo) => todo.id !== action.payload)
     },
     moveTodo: (state, action) => {
       const [removed] = state.splice(action.payload.source, 1)
