@@ -26,7 +26,7 @@ const TodosList = ({
           <div className="todos-list__items" ref={innerRef} {...droppableProps}>
             {items?.map((item, index) => (
               <TodoItem
-                key={index}
+                key={item.id}
                 item={item}
                 index={index}
                 onRemove={onRemove}
