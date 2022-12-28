@@ -5,7 +5,7 @@ const Filter = ({ filter, onFilterChange }: IProps) => {
     onFilterChange(event.target.name)
   }
 
-  const isSelected = (value: string) => (value === filter ? "selected" : "")
+  const isSelected = (value: IFilter) => (value === filter ? "selected" : "")
 
   return (
     <div className="filter">
