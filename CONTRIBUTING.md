@@ -17,7 +17,7 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 
 1. Fork the repo and create your branch from `main`.
 
-<img width="359" alt="image" src="https://user-images.githubusercontent.com/26444448/179548694-d33a8d9b-77ab-4bd5-9e22-f02075309c88.png">
+![image](https://user-images.githubusercontent.com/26444448/213957439-b89aac16-ec1c-4f6e-9d2d-fca90f848752.png)
 
 2. Commit your changes in that branch.
 3. Push your local branch
