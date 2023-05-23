@@ -24,6 +24,13 @@
     padding: 0 0.75rem;
     font-weight: 600;
     margin-top: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 1rem;
+
+    @media screen and (min-width: $mobile-breakpoint) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
 
     &.is-completed {
       text-decoration-line: line-through;
