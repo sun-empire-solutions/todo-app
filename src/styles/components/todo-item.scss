@@ -1,11 +1,12 @@
 .todo-item {
   width: 100%;
   border: none;
-  height: 50px;
+  height: auto;
   color: $DarkGrayishBlue;
   font-size: 14px;
   display: flex;
   align-items: center;
+  padding: 1rem 0;
 
   &:not(:last-child) {
     border-bottom: 1px solid hsl(0deg 0% 58% / 13%);
@@ -35,7 +36,7 @@
     height: 12px;
 
     @media screen and (min-width: $mobile-breakpoint) {
-      display: none;
+      opacity: 0;
     }
 
     &:hover {
@@ -49,7 +50,7 @@
 
   &:hover {
     .remove-icon {
-      display: block;
+      opacity: 1;
     }
   }
 }
