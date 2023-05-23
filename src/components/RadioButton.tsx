@@ -1,35 +1,22 @@
-import { useState } from "react"
-
 // @ts-ignore
 import iconCheck from "./../assets/images/icon-check.svg"
 
-const RadioButton = ({ checked, disabled, onCheck }: IProps) => {
-  const [isChecked, setIsChecked] = useState(checked)
-
-  const handleClick = () => {
-    if (!disabled) {
-      setIsChecked((checked) => !checked)
-      onCheck()
-    }
-  }
-
+const RadioButton = ({ checked, disabled }: IProps) => {
   return (
-    <button
-      className={`radio-button ${isChecked ? "is-checked" : ""} ${
+    <div
+      className={`radio-button ${checked ? "is-checked" : ""} ${
         disabled ? "disabled" : ""
       }`}
-      onClick={handleClick}
     >
       <img src={iconCheck} />
       <div className="white-background"></div>
-    </button>
+    </div>
   )
 }
 
 type IProps = {
   checked: boolean
   disabled?: boolean
-  onCheck: () => void
 }
 
 export { RadioButton }

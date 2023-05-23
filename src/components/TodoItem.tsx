@@ -26,11 +26,13 @@ const TodoItem = ({
         <div
           className="todo-item"
           ref={innerRef}
+          role="button"
+          onClick={handleComplete}
           {...draggableProps}
           {...dragHandleProps}
         >
           <div className="todo-radio">
-            <RadioButton checked={completed} onCheck={handleComplete} />
+            <RadioButton checked={completed} />
           </div>
 
           <span className={`todo-text ${completed ? "is-completed" : ""}`}>
